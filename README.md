@@ -39,7 +39,7 @@ The primary approach for this analysis was **K-Means clustering** to segment cus
 
 ## Executive Summary
 
-The analysis identified **3 distinct customer segments**:
+The analysis identified **5 distinct customer groups**:
 
 | Cluster | Label                     | Age       | Spending Score | Annual Income |
 |---------|---------------------------|-----------|----------------|---------------|
@@ -51,19 +51,17 @@ The analysis identified **3 distinct customer segments**:
 
 
 
-**Interpretation:**  
-- Cluster profiles reveal behavioral patterns and potential marketing opportunities.  
-- High-spending, high-income customers are a priority for premium promotions.  
-- Low-spending segments can be engaged through discount offers or loyalty incentives.
+## Recommendations
+5 Unique marketing strategies are proposed for each of the distinct types of customer
 
-## Recommendations for Action
-- **Targeted Marketing:** Personalize campaigns based on cluster behavior  
-- **Store Layout Optimization:** Place products to appeal to high-value clusters  
-- **Loyalty Programs:** Design incentives to increase spending among lower-spending segments  
-- **Monitor and Update:** Re-run clustering periodically as customer behavior evolves  
+1. **Average Shopper** – Offer general promotions and loyalty programs to ensure customer retention and consistent shopping.  
+2. **Wealthy but Reserved** – Emphasize premium-quality stores and personalized experiences, including upscale restaurant deals and exclusive promotions, rather than frequent sales.  
+3. **Luxury Spenders** – Offer more aggressive marketing for high-end items, including premium brand promotions, designer fashion brands, upscale restaurants, and premium jewelry to maximize engagement and sales.  
+4. **Frugal by Necessity** – Target this group with more aggressive discounts and value bundles to get large amounts of items for a discounted price.  
+5. **Young, Impulsive Spenders** – Collaborate with social media teams to run promotions online to spread awareness and increase sales, focusing on trendy items.
 
 ## Next Steps / Future Enhancements
-- Explore **hierarchical clustering** or **DBSCAN** to validate cluster structure  
+- Explore other clustering methods that can handle categorical variables to see if those methods can account for gender  
 - Incorporate additional features like **visit frequency**, **product preferences**, or **demographics**  
 - Use **PCA** for dimensionality reduction if dataset expands with more features  
 
