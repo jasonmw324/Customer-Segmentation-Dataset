@@ -4,39 +4,38 @@
 This project analyzes customer behavior at a shopping mall to identify distinct customer segments. Understanding these segments helps the mall design targeted marketing strategies, improve customer engagement, and optimize store layouts or promotions. By grouping similar customers, the mall can better tailor offers based on spending habits, age, and income.
 
 ## Objective
-Find distinct customer groups use clustering algorithms to identify distinct groups based on demographics and spending behavior. Insights from clusters guide personalized marketing campaigns, loyalty programs, and product placement strategies.
+Using a selected clustering algorthm find distinct customer segments and based on those clusters characterics suggest hypothetical targeted marketing strategies for each of the clusters.
+
 
 > The Python code for the analysis can be found [here](#)  
 
 ## Dataset Overview
-The dataset contains information on mall customers, including:
+The dataset contains information on **200 mall customers**, with the following variables:
 
 - **customer_id** – unique identifier  
 - **age** – customer age
 - **gender** – binary indicator of gender (male or female)  
 - **annual_income** – yearly income in thousands  
-- **spending_score** – measure of purchasing behavior  
-
-The dataset includes **200 observations** across these key features.
-
+- **spending_score** – measure of purchasing behavior
+- 
 ## Methods
 
-The primary approach for this analysis was **K-Means clustering** to segment customers based on key continuous features. The methodology included the following steps:
-
+The primary approach for this analysis was **K-Means clustering** to segment customers based on key continuous features. This was chosen based on the following: 
 - **Initial Exploration:**  
-  During exploratory data analysis (EDA), we assessed the potential impact of categorical variables such as **Gender** on customer behavior. Visualizations indicated that gender did not strongly differentiate spending patterns or income levels, so it was excluded from the clustering features.
+  During exploratory data analysis (EDA), we assessed the potential impact of categorical variables such as **Gender** on customer behavior. Pairwise scatter plots of Age, Spending Score, and Annual Income showed that Gender was almost evenly distributed across the data, suggesting it would not significantly influence clustering.
 
 - **Alternative Approaches Considered:**  
-  To account for mixed data types (continuous and categorical), we explored **Gower distance** combined with **hierarchical clustering**. However, hierarchical clustering using Gower distance did not produce well-separated clusters, likely due to the limited size of the dataset (200 observations) and the weak influence of categorical variables.
+  Due to k-means only being about to use continious features and standard euclidian distance indorder to account for mixed data types (continuous and categorical), Hierarchical clustering was performed using Gower distance as the dissimilarity metric. However, hierarchical clustering using Gower distance did not produce well-separated clusters, likely due to the limited size of the dataset (200 observations) and the weak influence of categorical variables. The hierarchical clustering analysis suggested two groups, but the separation between them was weak. Increasing the number of groups did not improve the segmentation.
 
+ 
 - **Final Model Selection:**  
-  Based on the EDA insights, **K-Means clustering** was chosen using only the continuous features:
+  Based on the EDA insights and the poor performance of the hierarchical clustering alogrithm gender was dropped and, **K-Means clustering** was chosen using only the continuous features:
   - **Age**
   - **Annual Income (k$)**
   - **Spending Score (1-100)**
 
 - **Number of Clusters (k):**  
-  The optimal number of clusters was determined using the **elbow method** (to identify diminishing returns in inertia) and **silhouette scores** (to assess cluster separation quality).
+  The optimal number of clusters was determined using the **elbow method** to identify diminishing returns in inertia, **silhouette scores** and **visualizations** to assess cluster separation quality.
 
 - **Cluster Assignment:**  
   After fitting the model, each customer was assigned to a cluster, and the results were added as a new column `cluster` in the dataset for further analysis.
@@ -49,7 +48,7 @@ The primary approach for this analysis was **K-Means clustering** to segment cus
 
 The analysis identified **3 distinct customer segments**:
 
-| Cluster | Characteristics                     | Business Insight                                  |
+| Cluster | Label                     | Age | Spending Score | Annual Income                                  |
 |---------|------------------------------------|--------------------------------------------------|
 | 1       | Younger, low income, low spending  | Target with promotions or entry-level products |
 | 2       | Middle-aged, high income, high spending | Focus on premium offers, loyalty programs     |
