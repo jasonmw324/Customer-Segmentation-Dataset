@@ -7,7 +7,7 @@ This project analyzes customer behavior at a shopping mall to identify distinct 
 Using a selected clustering algorthm find distinct customer segments and based on those clusters characterics suggest hypothetical targeted marketing strategies for each of the clusters.
 
 
-> The Python code for the analysis can be found [here](#)  
+> The Python code for the analysis can be found [here](Customer_Segmentation.ipynb)(#)
 
 ## Dataset Overview
 The dataset contains information on **200 mall customers**, with the following variables:
@@ -27,7 +27,7 @@ The primary approach for this analysis was **K-Means clustering** to segment cus
 - **Alternative Approaches Considered:**  
   Due to k-means only being about to use continious features and standard euclidian distance indorder to account for mixed data types (continuous and categorical), Hierarchical clustering was performed using Gower distance as the dissimilarity metric. However, hierarchical clustering using Gower distance did not produce well-separated clusters, likely due to the limited size of the dataset (200 observations) and the weak influence of categorical variables. The hierarchical clustering analysis suggested two groups, but the separation between them was weak. Increasing the number of groups did not improve the segmentation.
 
- 
+ ![Dendrogram](dendogram.png)
 - **Final Model Selection:**  
   Based on the EDA insights and the poor performance of the hierarchical clustering alogrithm gender was dropped and, **K-Means clustering** was chosen using only the continuous features:
   - **Age**
@@ -36,6 +36,8 @@ The primary approach for this analysis was **K-Means clustering** to segment cus
 
 - **Number of Clusters (k):**  
   The optimal number of clusters was determined using the **elbow method** to identify diminishing returns in inertia, **silhouette scores** and **visualizations** to assess cluster separation quality.
+
+  ![Elbow Plot](elbow.png)
 
 ## Executive Summary
 
@@ -48,6 +50,8 @@ The analysis identified **5 distinct customer groups**:
 | 3       | Luxury Spenders           | 32.88     | 81.53          | 86.10         |
 | 4       | Frugal by Necessity       | 46.25     | 18.35          | 26.75         |
 | 5       | Young, Impulsive Spenders | 25.19     | 62.24          | 41.09         |
+
+![3D Cluster Plot](3D-Cluster-Plot.png)
 
 
 
