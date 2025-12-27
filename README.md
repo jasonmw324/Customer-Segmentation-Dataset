@@ -7,7 +7,7 @@ This project analyzes customer behavior at a shopping mall to identify distinct 
 Using a selected clustering algorthm find distinct customer segments and based on those clusters characterics suggest hypothetical targeted marketing strategies for each of the clusters.
 
 
-> The Python code for the analysis can be found [here](Customer_Segmentation.ipynb)(#)
+> The Python code for the analysis can be found [here](Customer_Segmentation.ipynb)
 
 ## Dataset Overview
 The dataset contains information on **200 mall customers**, with the following variables:
