@@ -37,7 +37,7 @@ The primary approach for this analysis was **K-Means clustering** to segment cus
 - **Number of Clusters (k):**  
   The optimal number of clusters was determined using the **elbow method** to identify diminishing returns in inertia, **silhouette scores** and **visualizations** to assess cluster separation quality.
 
-  ![Elbow Plot](elbow.png)
+  ![Elbow Plot](elbow_plot.png)
 
 ## Executive Summary
 
